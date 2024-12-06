@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автосалон "13"</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .heart {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #d4af37;
+            transition: color 0.3s;
+        }
+
+        .heart.filled {
+            color: #ff0000;
+        }
+
+        .tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .tabs a {
+            padding: 1rem 2rem;
+            background-color: #2a2a2a;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+        }
+
+        .tabs a:hover {
+            background-color: #ff5722;
+            transform: translateY(-2px);
+        }
+
+        .tabs a.active {
+            background-color: #d4af37;
+            transform: translateY(-2px);
+            color: #2a2a2a;
+        }
+
+        .cars-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .luxury-car-card {
+            background-color: #151515;
+            width: 30%;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .luxury-car-card h3 {
+            font-size: 1.5rem;
+            color: #d4af37;
+        }
+
+        .luxury-car-card p {
+            font-size: 1rem;
+            color: #ccc;
+            font-weight: bold;
+        }
+
+        .luxury-recommendations, .luxury-brands-filter {
+            margin-top: 2rem;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 0.5rem;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-bar button {
+            padding: 0.5rem 1rem;
+            background-color: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <header class="luxury-header">
+        <div class="container">
+            <div class="header-left">
+                <a href="./index.html" class="logo">13Style.ru</a>
+                <form class="search-bar" id="searchForm">
+                    <input type="text" id="searchQuery" placeholder="Поиск люксовых автомобилей..." required>
+                    <button type="submit">Поиск</button>
+                </form>
+            </div>
+            <div class="header-right">
+                <nav>
+                    <ul>
+                        <li><a href="#">Модели</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Кредит</a></li>
+                        <li><a href="#">Каталог</a></li>
+                    </ul>
+                </nav>
+                <a href="#" class="btn-login">Войти</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="tabs">
+        <a href="#" id="allCarsTab" class="active">Все автомобили</a>
+        <a href="#" id="favoritesTab">Избранные</a>
+    </div>
+
+    <section class="luxury-brands-filter">
+        <div class="container">
+            <h2>Люксовые автомобили в Москве</h2>
+            <div class="brands">
+                <a href="#" class="brand">
+                    <img src="./img/lamborghini-logo.png" alt="Lamborghini" class="brand-logo"> Lamborghini
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/rolls-logo.png" alt="Rolls-Royce" class="brand-logo"> Rolls-Royce
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/bentley_logo.png" alt="Bentley" class="brand-logo"> Bentley
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/logo-mercedes.png" alt="Mercedes" class="brand-logo"> Mercedes
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/porsche_logo.png" alt="Porsche" class="brand-logo"> Porsche
+                </a>
+                <a href="#" class="brand">
+                    <img src="./img/bmw-logo.png" alt="BMW" class="brand-logo"> BMW
+                </a>
+            </div>
+            <button class="btn-show-more">Показать 50,000 объявлений</button>
+        </div>
+    </section>
+
+    <section class="luxury-recommendations" id="allCarsSection">
+        <div class="container">
+            <h2>Наши рекомендации</h2>
+            <div class="cars-grid" id="carsGrid">
+                <div class="luxury-car-card" data-car-name="Mercedes S-Class">
+                    <div class="car-image">
+                        <a href="car-details.html?car=mercedes-s-class">
+                            <img src="./img/mercedes.webp" alt="Mercedes">
+                            <span class="discount-badge">Скидка до 2M ₽</span>
+                        </a>
+                    </div>
+                    <h3>Mercedes S-Class</h3>
+                    <p>45 000 000 ₽</p>
+                    <p>2024 / Новый</p>
+                    <span class="heart" data-car-name="Mercedes S-Class">&#9829;</span>
+                </div>
+                <div class="luxury-car-card" data-car-name="Rolls-Royce Phantom">
+                    <div class="car-image">
+                        <a href="car-details.html?car=rolls-royce-phantom">
+                            <img src="./img/rolls.webp" alt="Rolls Royce Phantom">
+                            <span class="discount-badge">Скидка до 5M ₽</span>
+                        </a>
+                    </div>
+                    <h3>Rolls-Royce Phantom</h3>
+                    <p>99 900 000 ₽</p>
+                    <p>2024 / Новый</p>
+                    <span class="heart" data-car-name="Rolls-Royce Phantom">&#9829;</span>
+                </div>
+                <div class="luxury-car-card" data-car-name="BMW 7-Series">
+                    <div class="car-image">
+                        <a href="car-details.html?car=bmw-7-series">
+                            <img src="./img/bmw7.webp" alt="BMW 7-Series">
+                            <span class="discount-badge">Скидка до 3M ₽</span>
+                        </a>
+                    </div>
+                    <h3>BMW 7-Series</h3>
+                    <p>28 000 000 ₽</p>
+                    <p>2024 / Новый</p>
+                    <span class="heart" data-car-name="BMW 7-Series">&#9829;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="luxury-recommendations" id="favoritesSection" style="display: none;">
+        <div class="container">
+            <h2>Избранные автомобили</h2>
+            <div class="cars-grid" id="favoritesGrid"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 13Style.ru Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        let favorites = [];
+        document.querySelectorAll('.heart').forEach(heart => {
+            heart.addEventListener('click', function() {
+                const carName = this.getAttribute('data-car-name');
+                const isFavorite = favorites.includes(carName);
+                if (isFavorite) {
+                    favorites = favorites.filter(name => name !== carName);
+                    this.classList.remove('filled');
+                } else {
+                    favorites.push(carName);
+                    this.classList.add('filled');
+                }
+            });
+        });
+
+        document.getElementById('allCarsTab').addEventListener('click', function() {
+            document.getElementById('allCarsSection').style.display = 'block';
+            document.getElementById('favoritesSection').style.display = 'none';
+            document.getElementById('favoritesTab').style.backgroundColor = '';
+            this.style.backgroundColor = '#555';
+        });
+
+        document.getElementById('favoritesTab').addEventListener('click', function() {
+            document.getElementById('allCarsSection').style.display = 'none';
+            document.getElementById('favoritesSection').style.display = 'block';
+            document.getElementById('allCarsTab').style.backgroundColor = '';
+            this.style.backgroundColor = '#555';
+            const favoritesGrid = document.getElementById('favoritesGrid');
+            favoritesGrid.innerHTML = '';
+            favorites.forEach(fav => {
+                const card = document.querySelector(`.luxury-car-card[data-car-name="${fav}"]`);
+                favoritesGrid.appendChild(card.cloneNode(true));
+            });
+        });
+
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const searchQuery = document.getElementById('searchQuery').value.toLowerCase();
+            const cars = document.querySelectorAll('.luxury-car-card');
+            cars.forEach(car => {
+                const carName = car.querySelector('h3').textContent.toLowerCase();
+                car.style.display = carName.includes(searchQuery) ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

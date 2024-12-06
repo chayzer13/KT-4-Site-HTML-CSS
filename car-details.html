@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подробное объявление: Mercedes S-Class</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .car-details {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px;
+        }
+
+        .car-image {
+            width: 100%;
+            max-width: 500px;
+            height: 100%; 
+            background-color: #fff;
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden; 
+            border: 5px solid #d4af37; 
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0) 50%, rgba(212, 175, 55, 0.3) 50%); 
+            background-size: 200% 200%;
+            animation: animateBorder 1s linear infinite; 
+        }
+
+        
+        @keyframes animateBorder {
+            0% {
+                background-position: 200% 200%;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        .car-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .car-image:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5); 
+        }
+
+        .car-image:hover img {
+            transform: scale(1.05); 
+        }
+
+        .car-info {
+            width: 60%;
+            padding: 20px;
+            background-color: #151515;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .car-info h2 {
+            font-size: 2rem;
+            color: #d4af37;
+        }
+
+        .car-info p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        .btn-back {
+            background-color: #d4af37;
+            color: #2a2a2a;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #ff5722;
+        }
+    </style>
+</head>
+<body>
+    <header class="luxury-header">
+        <div class="container">
+            <a href="./index.html" class="logo">13Style.ru</a>
+        </div>
+    </header>
+
+    <section class="car-details">
+        <div class="car-image">
+            <img src="" id="carImage" alt="Car Image">
+        </div>
+
+        <div class="car-info">
+            <h2 id="carName">Mercedes S-Class</h2>
+            <p><strong>Цена:</strong> <span id="carPrice">45 000 000 ₽</span></p>
+            <p><strong>Год выпуска:</strong> 2024</p>
+            <p><strong>Пробег:</strong> 0 км</p>
+            <p><strong>Цвет:</strong> Черный</p>
+            <p><strong>Описание:</strong> Роскошный автомобиль с передовыми технологиями, безупречным дизайном и максимальным комфортом для водителя и пассажиров.</p>
+            <p><strong>Особенности:</strong></p>
+            <ul>
+                <li>Двигатель V8</li>
+                <li>Система автопилота</li>
+                <li>Интерьер из натуральной кожи</li>
+                <li>Передовые системы безопасности</li>
+            </ul>
+            <a href="index.html" class="btn-back">Назад к объявлениям</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 13Style.ru Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        const carName = new URLSearchParams(window.location.search).get("car");
+
+        const carDetails = {
+            "mercedes-s-class": {
+                name: "Mercedes S-Class",
+                price: "45 000 000 ₽",
+                year: "2024",
+                mileage: "0 км",
+                color: "Черный",
+                description: "Роскошный автомобиль с передовыми технологиями, безупречным дизайном и максимальным комфортом для водителя и пассажиров.",
+                features: ["Двигатель V8", "Система автопилота", "Интерьер из натуральной кожи", "Передовые системы безопасности"],
+                image: "./img/mercedes.webp"
+            },
+            "rolls-royce-phantom": {
+                name: "Rolls-Royce Phantom",
+                price: "99 900 000 ₽",
+                year: "2024",
+                mileage: "0 км",
+                color: "Белый",
+                description: "Эталон роскоши и изысканности, Phantom представляет собой настоящую королевскую машину.",
+                features: ["Двигатель V12", "Система автопилота", "Интерьер из кожи и дерева", "Герметичные окна"],
+                image: "./img/rolls.webp"
+            },
+            "bmw-7-series": {
+                name: "BMW 7-Series",
+                price: "28 000 000 ₽",
+                year: "2024",
+                mileage: "0 км",
+                color: "Синий",
+                description: "BMW 7-Series — идеальный баланс технологий и комфорта для вашего будущего.",
+                features: ["Двигатель I6", "Премиум аудиосистема", "Система предотвращения столкновений", "Полный привод"],
+                image: "./img/bmw7.webp"
+            }
+        };
+
+        const carData = carDetails[carName];
+
+        if (carData) {
+            document.getElementById("carName").textContent = carData.name;
+            document.getElementById("carPrice").textContent = carData.price;
+            document.getElementById("carImage").src = carData.image;
+
+            const featuresList = document.querySelector(".car-info ul");
+            carData.features.forEach(feature => {
+                const li = document.createElement("li");
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        } else {
+            document.querySelector(".car-info").innerHTML = "<h2>Информация не найдена</h2>";
+        }
+    </script>
+</body>
+</html>

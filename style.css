@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #101010;
+  color: #fff;
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.luxury-header {
+  background-color: #181818;
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+}
+
+.luxury-header .header-left {
+  display: flex;
+  align-items: center;
+}
+
+.luxury-header .header-left .logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+.luxury-header .header-left .search-bar {
+  display: flex;
+}
+
+.luxury-header .header-left .search-bar input {
+  width: 350px;
+  padding: 0.8rem;
+  border: 1px solid #444;
+  background-color: #202020;
+  color: #fff;
+  border-radius: 4px 0 0 4px;
+}
+
+.luxury-header .header-left .search-bar button {
+  padding: 0.8rem 1.5rem;
+  background-color: #d4af37;
+  border: none;
+  color: #101010;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  transition: background-color 0.3s ease;
+}
+
+.luxury-header .header-left .search-bar button:hover {
+  background-color: #cfa23e;
+}
+
+.luxury-header .header-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.luxury-header .header-right nav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 2rem;
+}
+
+.luxury-header .header-right nav ul li {
+  margin-right: 1.5rem;
+}
+
+.luxury-header .header-right nav ul li a {
+  text-decoration: none;
+  color: #aaa;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.luxury-header .header-right nav ul li a:hover {
+  color: #fff;
+}
+
+.luxury-header .header-right .btn-login {
+  text-decoration: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  background-color: #303030;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.luxury-header .header-right .btn-login:hover {
+  background-color: #404040;
+}
+
+.luxury-brands-filter {
+  padding: 3rem 0;
+  background-color: #151515;
+}
+
+.luxury-brands-filter h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #d4af37;
+}
+
+.luxury-brands-filter .brands {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.luxury-brands-filter .brands .brand {
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  color: #d4af37;
+  background-color: #202020;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.luxury-brands-filter .brands .brand:hover {
+  background-color: #333;
+}
+
+.luxury-brands-filter .btn-show-more {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #d4af37;
+  color: #101010;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.luxury-brands-filter .btn-show-more:hover {
+  background-color: #cfa23e;
+}
+
+.luxury-recommendations {
+  background-color: #101010;
+  padding: 3rem 0;
+}
+
+.luxury-recommendations h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: 300;
+  color: #d4af37;
+}
+
+.luxury-recommendations .cars-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card {
+  background-color: #151515;
+  width: 30%;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card:hover {
+  transform: scale(1.05);
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card .car-image {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card .car-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card .car-image .discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #d4af37;
+  color: #101010;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card h3 {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #d4af37;
+}
+
+.luxury-recommendations .cars-grid .luxury-car-card p {
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #181818;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer p {
+  color: #666;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  width: 30px;
+  height: auto;
+  margin-right: 0.5rem;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+  .container {
+      width: 95%;
+  }
+
+  .luxury-header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .luxury-header .header-left {
+      margin-bottom: 1rem;
+  }
+
+  .luxury-header .header-left .search-bar {
+      flex-direction: column;
+  }
+
+  .luxury-header .header-left .search-bar input {
+      width: 100%;
+      margin-bottom: 0.5rem;
+  }
+
+  .luxury-header .header-right nav ul {
+      flex-direction: column;
+      margin-right: 0;
+  }
+
+  .luxury-header .header-right nav ul li {
+      margin-bottom: 0.5rem;
+  }
+
+  .luxury-recommendations .cars-grid {
+      justify-content: center;
+  }
+
+  .luxury-recommendations .cars-grid .luxury-car-card {
+      width: 90%;
+      margin-bottom: 1rem;
+  }
+
+  .luxury-brands-filter .brands {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .luxury-brands-filter .brands .brand {
+      width: 90%;
+      text-align: center;
+  }
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  margin-right: 2rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+  color: #d4af37; 
+  transform: scale(1.1); 
+}
+
+.luxury-header .logo:hover {
+  color: #d4af37;
+  transform: scale(1.1);
+}
